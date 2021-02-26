@@ -32,6 +32,9 @@ Plug 'sheerun/vim-polyglot'
 " Plugin surround
 Plug 'tpope/vim-surround'
 
+" Plugin treesitter
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+
 " Init plugins
 call plug#end()
 
@@ -60,3 +63,29 @@ nmap <C-w><C-n> 1<C-w><C-w>
 
 " Auto close nvim if NERDTree is the only window
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+""" Treesitter config
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = "maintained",
+  incremental_selection = {
+    enable = true,
+    keymaps = {
+      init_selection = "gnn",
+      node_incremental = "grn",
+      scope_incremental = "grc",
+      node_decremental = "grm",
+    },
+  },
+  highlight = {
+    enable = true,
+  },
+  indent = {
+    enable = true,
+  },
+}
+EOF
+
+" Treesitter-based folding
+set foldmethod=expr
+set foldexpr=nvim_treesitter#foldexpr()
