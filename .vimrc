@@ -14,6 +14,9 @@ set mouse=a
 " Hidden buffers
 set hidden
 
+" Path
+set path=.,**
+
 """ VIM user interface
 " Set 10 lines to the cursor - when moving vertically using j/k
 set so=10
