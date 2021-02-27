@@ -1,9 +1,6 @@
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => General
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""" General
 " Filetype plugins
-filetype plugin on
-filetype indent on
+filetype plugin indent on
 
 " Show line numbers
 set number
@@ -17,9 +14,7 @@ set mouse=a
 " Hidden buffers
 set hidden
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => VIM user interface
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""" VIM user interface
 " Set 10 lines to the cursor - when moving vertically using j/k
 set so=10
 
@@ -52,18 +47,17 @@ set novisualbell
 set t_vb=
 set tm=500
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Colors and Fonts
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""" Colors and Fonts
 " Enable syntax highlighting
 syntax enable
 
 " Fold colors
 highlight Folded ctermbg=236
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Text, tab and indent related
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""" Text, tab and indent related
+" Better '%' behavior
+runtime macros/matchit.vim
+
 " Use spaces instead of tabs
 set expandtab
 
@@ -74,12 +68,10 @@ set smarttab
 set shiftwidth=4
 set tabstop=4
 
-" Auto indent
-set ai
-" Smart indent
-set si
-" Wrap lines
-set wrap
+set autoindent                  " Auto indent
+set smartindent                 " Smart indent
+set wrap                        " Wrap lines
+set backspace=indent,eol,start  " Proper backspace behavior
 
 " Folding
 set foldmethod=syntax
@@ -87,18 +79,14 @@ set foldnestmax=10
 set foldlevel=10
 set nofoldenable
 
-""""""""""""""""""""""""""""""
-" => Status line
-""""""""""""""""""""""""""""""
+""" Status line
 " Always show the status line
 set laststatus=2
 
 " Format the status line
 set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l\ \ Column:\ %c
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Helper functions
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""" Helper functions
 " Returns true if paste mode is enabled
 function! HasPaste()
     if &paste
@@ -106,3 +94,6 @@ function! HasPaste()
     endif
     return ''
 endfunction
+
+""" Custom mappings
+nnoremap gb :ls<CR>:buffer<space>
