@@ -24,8 +24,8 @@ set wildmenu
 " Always show current position
 set ruler
 
-" Highlight search results
-set hlsearch
+" No highlight search results
+set nohlsearch
 
 " Make search act like search in modern browsers
 set incsearch
