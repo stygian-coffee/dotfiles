@@ -17,6 +17,9 @@ Plug 'neoclide/coc.nvim'
 " Plugin commentary
 Plug 'tpope/vim-commentary'
 
+" Plugin dispatch
+Plug 'tpope/vim-dispatch'
+
 " Plugin editorconfig
 Plug 'editorconfig/editorconfig-vim'
 
