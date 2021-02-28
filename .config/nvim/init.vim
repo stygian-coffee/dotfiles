@@ -23,6 +23,9 @@ Plug 'tpope/vim-dispatch'
 " Plugin editorconfig
 Plug 'editorconfig/editorconfig-vim'
 
+" Plugin fugitive
+Plug 'tpope/vim-fugitive'
+
 " Plugin fzf
 Plug 'junegunn/fzf'
 
@@ -84,7 +87,7 @@ require'nvim-treesitter.configs'.setup {
     enable = true,
   },
   indent = {
-    enable = true,
+    enable = false,
   },
 }
 EOF
