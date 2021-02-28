@@ -10,6 +10,7 @@ call plug#begin(stdpath('data').'/plugged')
 
 " Plugins
 Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'neoclide/coc.nvim'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-dispatch'
@@ -24,6 +25,9 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 " Init plugins
 call plug#end()
+
+"" Airline config
+let g:airline_theme='molokai'
 
 "" CoC config
 source ~/.config/nvim/coc.vim
