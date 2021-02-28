@@ -20,6 +20,7 @@ Plug 'junegunn/fzf'
 Plug 'tomasr/molokai'
 Plug 'preservim/nerdtree'
 Plug 'sheerun/vim-polyglot'
+Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
