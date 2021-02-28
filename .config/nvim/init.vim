@@ -34,6 +34,9 @@ colorscheme molokai
 "" fzf config
 let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -f -g ""'
 
+"" molokai config
+set termguicolors
+
 "" NERDTree config
 
 " Open NERDTree on start
