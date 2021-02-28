@@ -4,6 +4,8 @@ filetype plugin indent on
 
 " Show line numbers
 set number
+" relatively
+set relativenumber
 
 " Open help with vertical split
 autocmd FileType help wincmd L
