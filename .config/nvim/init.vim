@@ -17,6 +17,7 @@ Plug 'tpope/vim-dispatch'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'tpope/vim-fugitive'
 Plug 'junegunn/fzf'
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 Plug 'tomasr/molokai'
 Plug 'preservim/nerdtree'
 Plug 'sheerun/vim-polyglot'
