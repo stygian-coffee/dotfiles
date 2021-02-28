@@ -54,9 +54,6 @@ set tm=500
 " Enable syntax highlighting
 syntax enable
 
-" Fold colors
-highlight Folded ctermbg=236
-
 """ Text, tab and indent related
 " Better '%' behavior
 runtime macros/matchit.vim
