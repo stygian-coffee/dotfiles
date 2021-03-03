@@ -81,6 +81,10 @@ set foldnestmax=10
 set foldlevel=10
 set nofoldenable
 
+" Searching
+set grepprg=rg\ --vimgrep
+set grepformat^=%f:%l:%c:%m
+
 """ Status line
 " Always show the status line
 set laststatus=2
