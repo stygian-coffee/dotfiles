@@ -107,11 +107,3 @@ endfunction
 """ Custom mappings
 " go to buffer
 nnoremap gb :ls<CR>:buffer<space>
-
-" move lines up and down
-nnoremap <A-k> :move .-2<CR>==
-nnoremap <A-j> :move .+1<CR>==
-inoremap <A-k> <Esc>:move .-2<CR>==gi
-inoremap <A-j> <Esc>:move .+1<CR>==gi
-vnoremap <A-k> :move '<-2<CR>gv=gv
-vnoremap <A-j> :move '>+1<CR>gv=gv
