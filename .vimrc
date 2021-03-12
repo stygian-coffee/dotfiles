@@ -56,6 +56,9 @@ set tm=500
 " Enable syntax highlighting
 syntax enable
 
+" Embedded script syntax highlighting for lua
+let g:vimsyn_embed = 'l'
+
 """ Text, tab and indent related
 " Better '%' behavior
 runtime macros/matchit.vim
