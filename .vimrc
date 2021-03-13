@@ -105,5 +105,5 @@ function! HasPaste()
 endfunction
 
 """ Custom mappings
-" go to buffer
+" Go to buffer
 nnoremap gb :ls<CR>:buffer<space>
