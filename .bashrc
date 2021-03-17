@@ -14,13 +14,14 @@ export HISTCONTROL=ignoreboth:erasedups
 export EDITOR=nvim
 
 ## Modified commands
-alias ls='ls -h --color=auto'
-alias diff='colordiff'
-alias grep='grep --color=auto'
 alias df='df -h'
-alias du='du -ch'
-alias mkdir='mkdir -p'
+alias diff='colordiff'
 alias dmesg='dmesg -HL'
+alias du='du -ch'
+alias free='free -h'
+alias grep='grep --color=auto'
+alias ls='ls -h --color=auto'
+alias mkdir='mkdir -p'
 alias wget='wget -c'
 
 ## New commands
