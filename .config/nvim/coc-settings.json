@@ -1,4 +1,11 @@
 {
     "python.linting.pylintArgs": ["--load-plugins", "pylint_django"],
-    "rust-analyzer.diagnostics.enableExperimental": false
+    "rust-analyzer.diagnostics.enableExperimental": false,
+    "languageserver": {
+        "clangd": {
+            "command": "clangd",
+            "rootPatterns": ["compile_flags.txt", "compile_commands.json"],
+            "filetypes": ["c", "cc", "cpp", "c++", "objc", "objcpp"]
+        }
+    }
 }
