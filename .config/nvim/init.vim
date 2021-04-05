@@ -24,6 +24,7 @@ Plug 'matze/vim-move'
 Plug 'preservim/nerdtree'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-repeat'
+Plug 'AndrewRadev/splitjoin.vim'
 Plug 'justinmk/vim-sneak'
 Plug 'tpope/vim-surround'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
