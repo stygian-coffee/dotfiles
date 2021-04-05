@@ -113,3 +113,9 @@ nnoremap gb :ls<CR>:buffer<space>
 " Open and close quickfix list
 nnoremap <leader>co :copen<CR>
 nnoremap <leader>cc :cclose<CR>
+
+""" Custom commands
+command! -complete=customlist,CandidateFiles -nargs=1 Find find <args>
+function CandidateFiles(A,L,P)
+    return split(system(["find", "-type", "f", "-name", a:A . "*"]))
+endfunction
