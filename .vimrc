@@ -117,5 +117,10 @@ nnoremap <leader>cc :cclose<CR>
 """ Custom commands
 command! -complete=customlist,CandidateFiles -nargs=1 Find find <args>
 function CandidateFiles(A,L,P)
-    return split(system(["find", "-type", "f", "-name", a:A . "*"]))
+    if stridx(a:A, '*') == -1
+        let l:search_term = a:A . '*'
+    else
+        let l:search_term = a:A
+    endif
+    return split(system(["find", "-type", "f", "-name", l:search_term]))
 endfunction
