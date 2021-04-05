@@ -7,9 +7,6 @@ set number
 " relatively
 set relativenumber
 
-" Open help with vertical split
-autocmd FileType help wincmd L
-
 " Mouse support
 set mouse=a
 
@@ -105,8 +102,11 @@ function! HasPaste()
 endfunction
 
 """ Custom mappings
+" Edit and source config file
+nnoremap <leader>ev :vsplit $MYVIMRC<CR>
+nnoremap <leader>sv :source $MYVIMRC<CR>
 " Go to buffer
 nnoremap gb :ls<CR>:buffer<space>
 " Open and close quickfix list
-nnoremap <silent> <leader>co :copen<CR>
-nnoremap <silent> <leader>cc :cclose<CR>
+nnoremap <leader>co :copen<CR>
+nnoremap <leader>cc :cclose<CR>
