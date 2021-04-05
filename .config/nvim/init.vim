@@ -22,6 +22,7 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 Plug 'tomasr/molokai'
 Plug 'matze/vim-move'
 Plug 'preservim/nerdtree'
+Plug 'samoshkin/vim-find-files'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-repeat'
 Plug 'AndrewRadev/splitjoin.vim'
@@ -89,3 +90,5 @@ require'nvim-treesitter.configs'.setup {
 }
 EOF
 
+"" vim-find-files config
+let g:find_files_findprg = 'fd $* $d'
