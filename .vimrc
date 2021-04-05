@@ -7,6 +7,9 @@ set number
 " relatively
 set relativenumber
 
+" Show whitespace
+set list
+
 " Mouse support
 set mouse=a
 
