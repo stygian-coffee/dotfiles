@@ -107,3 +107,6 @@ endfunction
 """ Custom mappings
 " Go to buffer
 nnoremap gb :ls<CR>:buffer<space>
+" Open and close quickfix list
+nnoremap <silent> <leader>co :copen<CR>
+nnoremap <silent> <leader>cc :cclose<CR>
