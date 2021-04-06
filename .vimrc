@@ -122,5 +122,6 @@ function CandidateFiles(A,L,P)
     else
         let l:search_term = a:A
     endif
-    return split(system(["find", "-type", "f", "-name", l:search_term]))
+    return split(system(['find', '-type', 'f',
+                \'-name', l:search_term, '-or', '-path', l:search_term]))
 endfunction
