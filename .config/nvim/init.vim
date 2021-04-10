@@ -19,7 +19,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
-Plug 'tomasr/molokai'
+" Plug 'tomasr/molokai'
 Plug 'matze/vim-move'
 Plug 'preservim/nerdtree'
 Plug 'sheerun/vim-polyglot'
@@ -29,6 +29,7 @@ Plug 'justinmk/vim-sneak'
 Plug 'tpope/vim-surround'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'tpope/vim-unimpaired'
+Plug 'dylanaraps/wal.vim'
 
 " Init plugins
 call plug#end()
@@ -39,14 +40,12 @@ let g:airline_theme='molokai'
 "" CoC config
 source ~/.config/nvim/coc.vim
 
-"" molokai config
-colorscheme molokai
-
 "" fzf config
 let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -f -g ""'
 
 "" molokai config
-set termguicolors
+" colorscheme molokai
+" set termguicolors
 
 "" NERDTree config
 
@@ -88,3 +87,7 @@ require'nvim-treesitter.configs'.setup {
   },
 }
 EOF
+
+"" wal config
+set notermguicolors
+colorscheme wal

@@ -9,6 +9,9 @@ alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
 ## PATH
 export PATH=$PATH:/home/alex/.cargo/bin
 
+## Colors
+cat ~/.cache/wal/sequences
+
 ## Bash functionality
 export HISTCONTROL=ignoreboth:erasedups
 export EDITOR=nvim
