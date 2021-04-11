@@ -16,13 +16,14 @@ title_align center
 # NOTE: The '#f0f0f0' in the lines below is the color i3 will use if
 # it fails to get colors from Xresources.
 exec "wal -n --theme base16-seti"
-set_from_resource $fg i3wm.color1 #f0f0f0
+set_from_resource $fg i3wm.color0 #f0f0f0
 set_from_resource $bg i3wm.color0 #f0f0f0
+set_from_resource $focusbg i3wm.color7
 set_from_resource $focustext i3wm.color4
 #set_from_resource $indicator i3wm.color5
 
 # class                 border  backgr. text    indicator child_border
-client.focused          $bg     $bg     $focustext $bg    $bg
+client.focused          $focusbg    $focusbg     $fg $bg    $focusbg
 client.focused_inactive $bg     $bg     $fg     $bg       $bg
 client.unfocused        $bg     $bg     $fg     $bg       $bg
 client.urgent           $bg     $bg     $fg     $bg       $bg
@@ -32,7 +33,8 @@ client.background       $bg
 
 # window gaps
 # gaps outer 1
-gaps inner 12
+gaps inner 6
+smart_gaps on
 # https://github.com/airblader/i3#gaps
 # > Note: In order to use gaps you need to disable window titlebars.
 for_window [class=".*"] border pixel 6
@@ -96,8 +98,8 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split horizontally and vertically
-bindsym $mod+Control+h split h
-bindsym $mod+Control+v split v
+bindsym $mod+Control+l split h
+bindsym $mod+Control+j split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
