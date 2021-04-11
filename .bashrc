@@ -1,7 +1,7 @@
 ## dotfiles sync
 # https://www.atlassian.com/git/tutorials/dotfiles
 # https://news.ycombinator.com/item?id=11071754
-alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
+alias dots='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
 
 ## Liquid Prompt
 [[ $- = *i* ]] && source /usr/bin/liquidprompt
