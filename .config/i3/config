@@ -13,7 +13,7 @@ font pango:Mono 10
 title_align center
 
 # do not show borders if only one window is open in workspace
-hide_edge_borders smart
+hide_edge_borders smart_no_gaps
 
 # Colors via pywal
 # NOTE: The '#f0f0f0' in the lines below is the color i3 will use if
