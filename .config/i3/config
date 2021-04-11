@@ -7,23 +7,26 @@ set $term alacritty
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:DejaVu Sans Mono 10
+font pango:DejaVu Sans Mono Bold 10
 
 # align window titles to the center of the decorator
 title_align center
 
+# do not show borders if only one window is open in workspace
+hide_edge_borders smart
+
 # Colors via pywal
 # NOTE: The '#f0f0f0' in the lines below is the color i3 will use if
 # it fails to get colors from Xresources.
-exec "wal -n --theme base16-seti"
-set_from_resource $fg i3wm.color0 #f0f0f0
+exec --no-startup-id "wal -n --theme base16-seti"
+set_from_resource $fg i3wm.color7 #f0f0f0
 set_from_resource $bg i3wm.color0 #f0f0f0
-set_from_resource $focusbg i3wm.color7
-set_from_resource $focustext i3wm.color4
-#set_from_resource $indicator i3wm.color5
+set_from_resource $focusfg i3wm.color4 #f0f0f0
+set_from_resource $focusborder i3wm.color4 #f0f0f0
+set_from_resource $indicator i3wm.color2 #f0f0f0
 
 # class                 border  backgr. text    indicator child_border
-client.focused          $focusbg    $focusbg     $fg $bg    $focusbg
+client.focused          $bg     $bg     $focusfg $indicator $focusborder
 client.focused_inactive $bg     $bg     $fg     $bg       $bg
 client.unfocused        $bg     $bg     $fg     $bg       $bg
 client.urgent           $bg     $bg     $fg     $bg       $bg
@@ -119,7 +122,7 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+a focus parent
 
 # focus the child container
-#bindsym $mod+d focus child
+bindsym $mod+z focus child
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
