@@ -52,7 +52,7 @@ for_window [class=".*"] border pixel 6
 exec --no-startup-id dropbox
 exec --no-startup-id dunst
 exec --no-startup-id "feh --bg-scale ~/Pictures/zxqcgr1rxwo61.png"
-exec --no-startup-id polybar top -r
+exec --no-startup-id polybar bottom -r
 exec --no-startup-id redshift-gtk
 # bug in Redshift or Geoclue, see https://github.com/jonls/redshift/issues/636#issuecomment-412157307
 exec --no-startup-id /usr/lib/geoclue-2.0/demos/agent
