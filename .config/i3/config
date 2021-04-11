@@ -18,7 +18,8 @@ hide_edge_borders smart_no_gaps
 # Colors via pywal
 # NOTE: The '#f0f0f0' in the lines below is the color i3 will use if
 # it fails to get colors from Xresources.
-exec --no-startup-id "wal -n --theme base16-seti"
+# exec --no-startup-id "wal -n --theme base16-seti"
+exec --no-startup-id "wal -n --theme monokai"
 set_from_resource $fg i3wm.color7 #f0f0f0
 set_from_resource $bg i3wm.color0 #f0f0f0
 set_from_resource $focusfg i3wm.color4 #f0f0f0
