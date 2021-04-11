@@ -7,7 +7,7 @@ set $term alacritty
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:DejaVu Sans Mono Bold 10
+font pango:Mono 10
 
 # align window titles to the center of the decorator
 title_align center
@@ -52,6 +52,7 @@ for_window [class=".*"] border pixel 6
 exec --no-startup-id dunst
 exec --no-startup-id "feh --bg-scale ~/Pictures/zxqcgr1rxwo61.png"
 exec --no-startup-id nm-applet
+exec --no-startup-id pasystray
 exec --no-startup-id redshift-gtk
 exec --no-startup-id tint2
 # bug in Redshift or Geoclue, see https://github.com/jonls/redshift/issues/636#issuecomment-412157307
