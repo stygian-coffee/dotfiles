@@ -49,12 +49,11 @@ for_window [class=".*"] border pixel 6
 # screen before suspend. Use loginctl lock-session to lock your screen.
 # exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
+exec --no-startup-id dropbox
 exec --no-startup-id dunst
 exec --no-startup-id "feh --bg-scale ~/Pictures/zxqcgr1rxwo61.png"
-exec --no-startup-id nm-applet
-exec --no-startup-id pasystray
+exec --no-startup-id polybar top -r
 exec --no-startup-id redshift-gtk
-exec --no-startup-id tint2
 # bug in Redshift or Geoclue, see https://github.com/jonls/redshift/issues/636#issuecomment-412157307
 exec --no-startup-id /usr/lib/geoclue-2.0/demos/agent
 
@@ -64,6 +63,9 @@ exec --no-startup-id /usr/lib/geoclue-2.0/demos/agent
 # bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
 # bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 # bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+
+# make certain windows float by default
+for_window [class="Pavucontrol"] floating enable
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod

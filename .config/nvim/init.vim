@@ -19,7 +19,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
-" Plug 'tomasr/molokai'
+Plug 'tomasr/molokai'
 Plug 'matze/vim-move'
 Plug 'preservim/nerdtree'
 Plug 'sheerun/vim-polyglot'
@@ -44,8 +44,8 @@ source ~/.config/nvim/coc.vim
 let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -f -g ""'
 
 "" molokai config
-" colorscheme molokai
-" set termguicolors
+colorscheme molokai
+set termguicolors
 
 "" NERDTree config
 
@@ -89,5 +89,6 @@ require'nvim-treesitter.configs'.setup {
 EOF
 
 "" wal config
-set notermguicolors
-colorscheme wal
+" TODO hlsearch is invisible. Find a way to fix it
+" set notermguicolors
+" colorscheme wal
