@@ -322,9 +322,9 @@ content = " | "
 [module/launcher]
 type = custom/text
 
-content = 
+content = 
 content-font = 2
-content-foreground = ${colors.tertiary}
+content-foreground = ${colors.foreground}
 content-padding = 1
 
 click-left = rofi -show drun -modi drun
