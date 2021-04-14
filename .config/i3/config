@@ -50,6 +50,7 @@ for_window [class=".*"] border pixel 6
 # screen before suspend. Use loginctl lock-session to lock your screen.
 # exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
+exec --no-startup-id copyq
 exec --no-startup-id dropbox
 exec --no-startup-id dunst
 exec --no-startup-id "feh --bg-scale ~/Pictures/zxqcgr1rxwo61.png"
