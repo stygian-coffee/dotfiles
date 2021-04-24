@@ -9,6 +9,9 @@ set $term kitty
 # is used in the bar {} block below.
 font pango:DejaVuSans 10
 
+# Compose key Right Alt
+exec --no-startup-id setxkbmap -option compose:ralt
+
 # align window titles to the center of the decorator
 title_align center
 
