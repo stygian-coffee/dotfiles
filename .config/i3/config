@@ -87,6 +87,11 @@ bindsym $mod+Shift+q kill
 # start program launcher
 bindsym $mod+d exec --no-startup-id "rofi -modi drun,run -show drun"
 
+# take a screenshot of the whole screen
+bindsym Print exec "maim | xclip -selection clipboard -t image/png"
+# take a screenshot of a cropped section of the screen
+bindsym $mod+Print exec "maim -s | xclip -selection clipboard -t image/png"
+
 # change focus
 bindsym $mod+h focus left
 bindsym $mod+j focus down
