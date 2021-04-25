@@ -1,0 +1,55 @@
+#!/usr/bin/env python3
+
+import os
+import subprocess
+from jinja2 import Environment, FileSystemLoader
+
+
+def get_xres(filename: str = f"{os.getenv('HOME')}/.Xresources"):
+    """Gets the colors from .Xresources.
+
+    Returns a dict of values starting with `*` extracted from the .Xresources
+    file.
+    """
+
+    # Run the C preprocessor
+    result = subprocess.run(['cpp', filename],
+                            stdout=subprocess.PIPE,
+                            check=True)
+    output = result.stdout.decode('utf-8')
+
+    # Get rid of comments and values not starting with `*`
+    lines = (l.strip() for l in output.splitlines())
+    lines = (l for l in lines if l.startswith('*'))
+
+    # Remove leading `*` and split into key: value
+    splits = (l.split(':') for l in lines)
+    return {s[0].strip()[1:]: s[1].strip() for s in splits}
+
+
+def render_dotfile(env: Environment, xres: dict[str, str], filename: str):
+    """Renders a jinja2 template from `filename` and writes it.
+
+    Args:
+        env: The jinja2 Environment
+        xres: the dict obtained from get_xres()
+        filename: the template filename
+    """
+    template = env.get_template(filename)
+    outfile = open(f"{os.getenv('HOME')}/.cache/mkdots/{filename}", 'w')
+    outfile.write(template.render(xres))
+
+
+def main():
+    jinja_env = Environment(loader=FileSystemLoader(
+        f"{os.getenv('HOME')}/.config/mkdots/templates"))
+
+    xres = get_xres()
+
+    render_dotfile(jinja_env, xres, 'dunstrc')
+    render_dotfile(jinja_env, xres, 'rofi.rasi')
+    render_dotfile(jinja_env, xres, 'sh_colors.sh')
+
+
+if __name__ == '__main__':
+    main()

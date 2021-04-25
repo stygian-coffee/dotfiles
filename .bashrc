@@ -10,7 +10,7 @@ alias dots='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
 export PATH=$PATH:/home/alex/.cargo/bin
 
 ## Colors
-cat ~/.cache/wal/sequences
+bash ~/.cache/mkdots/sh_colors.sh
 
 ## Bash functionality
 export HISTCONTROL=ignoreboth:erasedups
