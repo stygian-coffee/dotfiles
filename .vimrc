@@ -108,6 +108,8 @@ nnoremap <leader>sv :source $MYVIMRC<CR>
 " Move 10 lines
 nnoremap gj 10j
 nnoremap gk 10k
+vnoremap gj 10j
+vnoremap gk 10k
 " Go to buffer
 nnoremap gb :ls<CR>:buffer<space>
 " Open and close quickfix list
