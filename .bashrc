@@ -25,6 +25,7 @@ alias free='free -h'
 alias grep='grep --color=auto'
 alias ls='ls -h --color=auto'
 alias mkdir='mkdir -p'
+alias ssh='TERM=xterm-256color ssh'
 alias wget='wget -c'
 
 ## New commands
