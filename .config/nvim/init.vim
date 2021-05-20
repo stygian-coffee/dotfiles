@@ -45,6 +45,8 @@ let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -f -g ""'
 "" molokai config
 colorscheme molokai
 set termguicolors
+highlight Normal guibg=#121212
+highlight MatchParen guifg=#404040
 
 "" NERDTree config
 
