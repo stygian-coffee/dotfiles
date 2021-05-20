@@ -29,7 +29,6 @@ Plug 'justinmk/vim-sneak'
 Plug 'tpope/vim-surround'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'tpope/vim-unimpaired'
-Plug 'dylanaraps/wal.vim'
 
 " Init plugins
 call plug#end()
@@ -87,8 +86,3 @@ require'nvim-treesitter.configs'.setup {
   },
 }
 EOF
-
-"" wal config
-" TODO hlsearch is invisible. Find a way to fix it
-" set notermguicolors
-" colorscheme wal
