@@ -20,12 +20,11 @@ hide_edge_borders smart_no_gaps
 
 set $fg {{ colors.primary.foreground }}
 set $bg {{ colors.primary.background }}
-set $focusfg {{ colors.normal.cyan }}
-set $focusborder {{ colors.normal.cyan }}
-set $indicator {{ colors.normal.green }}
+set $focustext {{ colors.bright.blue }}
+set $indicator {{ colors.normal.magenta }}
 
 # class                 border  backgr. text    indicator child_border
-client.focused          $bg     $bg     $focusfg $indicator $focusborder
+client.focused          $bg     $bg     $focustext $bg    $bg
 client.focused_inactive $bg     $bg     $fg     $bg       $bg
 client.unfocused        $bg     $bg     $fg     $bg       $bg
 client.urgent           $bg     $bg     $fg     $bg       $bg
@@ -34,12 +33,12 @@ client.placeholder      $bg     $bg     $fg     $bg       $bg
 client.background       $bg
 
 # window gaps
-# gaps outer 1
+# gaps outer 6
 gaps inner 6
 # smart_gaps on
 # https://github.com/airblader/i3#gaps
 # > Note: In order to use gaps you need to disable window titlebars.
-for_window [class=".*"] border pixel 6
+for_window [class=".*"] border pixel 3
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
@@ -54,6 +53,7 @@ exec --no-startup-id dunst
 exec --no-startup-id "feh --bg-scale ~/Pictures/zxqcgr1rxwo61.png"
 exec --no-startup-id nm-applet
 exec --no-startup-id parcellite
+exec --no-startup-id picom
 # exec --no-startup-id sleep 1 && polybar main -r
 exec --no-startup-id redshift-gtk
 # bug in Redshift or Geoclue, see https://github.com/jonls/redshift/issues/636#issuecomment-412157307
