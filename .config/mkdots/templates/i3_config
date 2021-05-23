@@ -62,7 +62,6 @@ exec --no-startup-id /usr/lib/geoclue-2.0/demos/agent
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id xfce4-panel --disable-wm-check
 exec --no-startup-id xfce4-power-manager # must enable systray applet via xfce4-power-manager-settings
-exec --no-startup-id xfsettingsd
 
 # Use pactl to adjust volume in PulseAudio.
 # set $refresh_i3status killall -SIGUSR1 i3status
