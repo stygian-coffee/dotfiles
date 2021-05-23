@@ -112,9 +112,15 @@ vnoremap gj 10j
 vnoremap gk 10k
 " Go to buffer
 nnoremap gb :ls<CR>:buffer<space>
-" Open and close quickfix list
+" Quickfix list and location list shortcuts
 nnoremap <leader>co :copen<CR>
 nnoremap <leader>cc :cclose<CR>
+nnoremap <leader>cn :cnext<CR>
+nnoremap <leader>cp :cprevious<CR>
+nnoremap <leader>lo :lopen<CR>
+nnoremap <leader>lc :lclose<CR>
+nnoremap <leader>ln :lnext<CR>
+nnoremap <leader>lp :lprevious<CR>
 
 """ Custom commands
 command! -complete=customlist,CandidateFiles -nargs=1 Find find <args>
@@ -127,3 +133,17 @@ function CandidateFiles(A,L,P)
     return split(system(['find', '-type', 'f',
                 \'-name', l:search_term, '-or', '-path', l:search_term]))
 endfunction
+
+""" Language specific
+
+"" Rust
+augroup rust
+    autocmd!
+    autocmd FileType rust setlocal formatprg=rustfmt\ --edition=2018
+augroup END
+
+"" Python
+augroup python
+    autocmd!
+    autocmd FileType python setlocal formatprg=yapf
+augroup END
