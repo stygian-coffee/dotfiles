@@ -13,6 +13,14 @@ export PATH=$PATH:/home/alex/.cargo/bin
 export HISTCONTROL=ignoreboth:erasedups
 export EDITOR=nvim
 
+## SSH agent
+if ! pgrep -u "$USER" ssh-agent > /dev/null; then
+    ssh-agent -t 4h > "$XDG_RUNTIME_DIR/ssh-agent.env"
+fi
+if [[ ! "$SSH_AUTH_SOCK" ]]; then
+    source "$XDG_RUNTIME_DIR/ssh-agent.env" >/dev/null
+fi
+
 ## Modified commands
 alias df='df -h'
 alias diff='colordiff'
