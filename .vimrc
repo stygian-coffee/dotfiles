@@ -145,6 +145,7 @@ command! Format normal! ggqG<C-O><C-O>
 augroup rust
     autocmd!
     autocmd FileType rust setlocal formatprg=rustfmt\ --edition=2018
+    autocmd FileType rust setlocal makeprg=cargo
 augroup END
 
 "" Python
