@@ -123,6 +123,8 @@ nnoremap <leader>ln :lnext<CR>
 nnoremap <leader>lp :lprevious<CR>
 
 """ Custom commands
+
+"" Find
 command! -complete=customlist,CandidateFiles -nargs=1 Find find <args>
 function CandidateFiles(A,L,P)
     if stridx(a:A, '*') == -1
@@ -133,6 +135,9 @@ function CandidateFiles(A,L,P)
     return split(system(['find', '-type', 'f',
                 \'-name', l:search_term, '-or', '-path', l:search_term]))
 endfunction
+
+"" Format
+command! Format normal! ggqG<C-O><C-O>
 
 """ Language specific
 
