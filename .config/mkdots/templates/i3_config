@@ -35,7 +35,7 @@ client.background       $bg
 # window gaps
 # gaps outer 6
 gaps inner 6
-# smart_gaps on
+smart_gaps on
 # https://github.com/airblader/i3#gaps
 # > Note: In order to use gaps you need to disable window titlebars.
 for_window [class=".*"] border pixel 3
