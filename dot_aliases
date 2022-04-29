@@ -1,0 +1,7 @@
+alias cp='cp -i'
+alias dmesg='dmesg --color'
+alias ip='ip -color'
+alias ln='ln -i'
+alias mv='mv -i'
+alias rm='rm -I'
+alias ssh='TERM=xterm-256color ssh'
