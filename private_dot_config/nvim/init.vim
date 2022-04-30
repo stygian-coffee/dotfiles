@@ -15,6 +15,7 @@ Plug 'chriskempson/base16-vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'justinmk/vim-sneak'
+Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'matze/vim-move'
 Plug 'michaeljsmith/vim-indent-object'
 Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
@@ -30,7 +31,6 @@ Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'Yggdroot/indentLine'
 call plug#end()
 call plug#helptags()
 
@@ -79,6 +79,13 @@ nnoremap <leader>lo :lopen<CR>
 nnoremap <leader>lc :lclose<CR>
 nnoremap <leader>ln :lnext<CR>
 nnoremap <leader>lp :lprevious<CR>
+
+" indent-blankline
+lua <<EOF
+require('indent_blankline').setup {
+  show_current_context = true,
+}
+EOF
 
 " Treesitter
 lua <<EOF
