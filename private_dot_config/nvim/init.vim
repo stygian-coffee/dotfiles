@@ -46,6 +46,7 @@ let g:vimsyn_embed = 'l'
 runtime macros/matchit.vim
 set completeopt=menu,menuone,noselect
 set expandtab
+set foldcolumn=auto
 set grepprg=rg\ --vimgrep
 set ignorecase
 set laststatus=2
