@@ -14,7 +14,7 @@ call plug#begin('~/.config/nvim/plugins')
 Plug 'chriskempson/base16-vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'justinmk/vim-sneak'
+Plug 'ggandor/lightspeed.nvim'
 Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'matze/vim-move'
 Plug 'michaeljsmith/vim-indent-object'
