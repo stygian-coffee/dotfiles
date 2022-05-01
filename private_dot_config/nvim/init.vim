@@ -44,6 +44,7 @@ colorscheme base16-seti
 let g:airline_theme = 'base16_seti'
 let g:vimsyn_embed = 'l'
 runtime macros/matchit.vim
+set breakindent
 set completeopt=menu,menuone,noselect
 set expandtab
 set foldcolumn=auto
