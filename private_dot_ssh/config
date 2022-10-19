@@ -2,4 +2,4 @@ AddKeysToAgent yes
 Host *
     ControlMaster auto
     ControlPersist no
-    ControlPath ~/.ssh/sockets/socket-%r@%h:%p
+    ControlPath ~/.ssh/sockets/%C
