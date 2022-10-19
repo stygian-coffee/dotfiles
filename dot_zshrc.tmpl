@@ -50,12 +50,16 @@ setopt autopushd pushdignoredups pushdtohome
 export PATH="$HOME/.local/bin:$HOME/.cargo/bin:$PATH"
 
 # SSH agent
+{{ if eq .profile "home" -}}
 if ! pgrep -u "$USER" ssh-agent > /dev/null; then
     ssh-agent -t 4h > "$XDG_RUNTIME_DIR/ssh-agent.env"
 fi
 if [[ ! "$SSH_AUTH_SOCK" ]]; then
     source "$XDG_RUNTIME_DIR/ssh-agent.env" >/dev/null
 fi
+{{ else if eq .profile "work" -}}
+export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+{{- end }}
 
 # Aliases
 [[ -f ~/.aliases ]] && source ~/.aliases

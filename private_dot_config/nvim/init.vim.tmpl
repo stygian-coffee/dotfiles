@@ -30,6 +30,9 @@ Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
+{{ if eq .profile "work" -}}
+Plug 'rodjek/vim-puppet'
+{{- end }}
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 call plug#end()
@@ -143,6 +146,9 @@ local servers = {
   'dockerls',
   'gopls',
   'intelephense',
+{{- if eq .profile "work" }}
+  'puppet',
+{{- end }}
   'pyright',
   'rust_analyzer',
   'terraformls',
