@@ -11,6 +11,7 @@ HYPHEN_INSENSITIVE="true"
 plugins=(
     ansible
     docker
+    fzf
     git
     kubectl
     terraform
@@ -40,8 +41,12 @@ SAVEHIST=4096
 # Keybindings
 bindkey -v
 bindkey '^[[Z' reverse-menu-complete
-bindkey "^R" history-incremental-search-backward
 bindkey "^[." insert-last-word
+# We need to remap these keybindings used in the fzf plugin because 'bindkey
+# -v' unmaps them.
+bindkey "^R" fzf-history-widget
+bindkey "^T" fzf-file-widget
+bindkey "^[c" fzf-cd-widget
 
 # Movement Options
 setopt autopushd pushdignoredups pushdtohome
