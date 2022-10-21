@@ -10,3 +10,7 @@ data:
     profile: {{ $profile | quote }}
     git_email: {{ $git_email | quote }}
     git_name: {{ $git_name | quote }}
+{{- if eq $profile "work" }}
+    # Working from home? Provide your office workstation IP here.
+    office_workstation_ip: ""
+{{ end -}}

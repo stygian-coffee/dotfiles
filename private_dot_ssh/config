@@ -1,5 +1,0 @@
-AddKeysToAgent yes
-Host *
-    ControlMaster auto
-    ControlPersist no
-    ControlPath ~/.ssh/sockets/%C
