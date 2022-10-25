@@ -4,10 +4,6 @@ Host *
     ControlPersist no
     ControlPath ~/.ssh/sockets/%C
 
-{{ if and (eq .profile "work") .office_workstation_ip -}}
-Host office_workstation
-    HostName {{ .office_workstation_ip }}
-
-Host *.base.nl *.basenet.nl
-    ProxyJump office_workstation
-{{ end -}}
+{{ if eq .profile "work" -}}
+Include ~/.ssh/config_basenet
+{{ end }}

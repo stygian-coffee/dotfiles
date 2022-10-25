@@ -1,0 +1,3 @@
+{{ if eq .profile "home" -}}
+.ssh/basenet_config
+{{- end }}
