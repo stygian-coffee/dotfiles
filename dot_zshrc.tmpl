@@ -63,7 +63,10 @@ if [[ ! "$SSH_AUTH_SOCK" ]]; then
     source "$XDG_RUNTIME_DIR/ssh-agent.env" >/dev/null
 fi
 {{ else if eq .profile "work" -}}
-export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
+# https://superuser.com/questions/520980/how-to-force-gpg-to-use-console-mode-pinentry-to-prompt-for-passwords
+export GPG_TTY=$TTY
+gpg-connect-agent updatestartuptty /bye >/dev/null 2>&1
 {{- end }}
 
 # Aliases
