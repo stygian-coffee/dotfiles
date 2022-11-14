@@ -1,4 +1,4 @@
-{{ if eq .profile "work" -}}
+{{ if eq .xdg_session_type "wayland" -}}
 # https://wiki.archlinux.org/title/firefox#Wayland
 MOZ_ENABLE_WAYLAND=1
 {{- end }}

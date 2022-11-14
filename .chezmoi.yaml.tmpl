@@ -18,7 +18,8 @@ data:
 {{- if eq $profile "work" }}
     # Working from home? Provide your office workstation IP here.
     office_workstation_ip: ""
-{{ end }}
+{{- end }}
+    xdg_session_type: {{ default "x11" (env "XDG_SESSION_TYPE") }}
 
 {{- if eq $profile "work" }}
 gpg:
