@@ -6,6 +6,10 @@ alias mv='mv -i'
 alias rm='rm -I'
 alias ssh='TERM=xterm-256color ssh'
 
+{{ if eq .profile "work" -}}
+alias ansible-shell='ansible all -m shell -b --ask-become-pass -e ansible_remote_tmp=/tmp/.ansible'
+{{ end -}}
+
 {{ if and (eq .profile "work") .office_workstation_ip -}}
 alias ssh-office-workstation='ssh office_workstation -v -N -D 1080'
 {{ end -}}
