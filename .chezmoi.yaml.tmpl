@@ -3,25 +3,23 @@
     {{ writeToStdout (print "Invalid profile " $profile "\n") -}}
     {{ exit 1 -}}
 {{ end -}}
-{{ $name := promptStringOnce . "name" "Name" -}}
-{{ $email := promptStringOnce . "email" "Email" -}}
 
-{{- if eq $profile "work" -}}
 encryption: gpg
-
-{{ end -}}
+gpg:
+    recipients:
+        - alkrigsman@gmail.com
+        - a.krigsman@basenet.nl
 
 data:
     profile: {{ $profile | quote }}
-    email: {{ $email | quote }}
-    name: {{ $name | quote }}
+{{- if eq $profile "home" }}
+    email: "akrigsman@gmail.com"
+{{ else }}{{/* "work" */}}
+    email: "a.krigsman@basenet.nl"
+{{- end }}
+    name: Alexander Krigsman
 {{- if eq $profile "work" }}
     # Working from home? Provide your office workstation IP here.
     office_workstation_ip: ""
 {{- end }}
     xdg_session_type: {{ default "x11" (env "XDG_SESSION_TYPE") }}
-
-{{- if eq $profile "work" }}
-gpg:
-    recipient: {{ $email | quote }}
-{{- end }}
