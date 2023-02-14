@@ -1,25 +1,25 @@
 {{ $profile := promptStringOnce . "profile" "Profile (home/work)" -}}
 {{ if not (or (eq $profile "home") (eq $profile "work")) -}}
-    {{ writeToStdout (print "Invalid profile " $profile "\n") -}}
-    {{ exit 1 -}}
+  {{ writeToStdout (print "Invalid profile " $profile "\n") -}}
+  {{ exit 1 -}}
 {{ end -}}
 
 encryption: gpg
 gpg:
-    recipients:
-        - alkrigsman@gmail.com
-        - a.krigsman@basenet.nl
+  recipients:
+    - alkrigsman@gmail.com
+    - a.krigsman@basenet.nl
 
 data:
-    profile: {{ $profile | quote }}
+  profile: {{ $profile | quote }}
 {{- if eq $profile "home" }}
-    email: "akrigsman@gmail.com"
+  email: "akrigsman@gmail.com"
 {{ else }}{{/* "work" */}}
-    email: "a.krigsman@basenet.nl"
+  email: "a.krigsman@basenet.nl"
 {{- end }}
-    name: Alexander Krigsman
+  name: Alexander Krigsman
 {{- if eq $profile "work" }}
-    # Working from home? Provide your office workstation IP here.
-    office_workstation_ip: ""
+  # Working from home? Provide your office workstation IP here.
+  office_workstation_ip: ""
 {{- end }}
-    xdg_session_type: {{ default "x11" (env "XDG_SESSION_TYPE") }}
+  xdg_session_type: {{ default "x11" (env "XDG_SESSION_TYPE") }}
