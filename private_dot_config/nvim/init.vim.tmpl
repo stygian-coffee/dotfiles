@@ -13,7 +13,7 @@ unlet autoload_plug_path
 call plug#begin('~/.config/nvim/plugins')
 Plug 'chriskempson/base16-vim'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'ggandor/lightspeed.nvim'
+Plug 'ggandor/leap.nvim'
 Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'matze/vim-move'
 Plug 'michaeljsmith/vim-indent-object'
@@ -84,6 +84,9 @@ nnoremap <leader>lo :lopen<CR>
 nnoremap <leader>lc :lclose<CR>
 nnoremap <leader>ln :lnext<CR>
 nnoremap <leader>lp :lprevious<CR>
+
+" leap.nvim
+lua require('leap').add_default_mappings()
 
 " indent-blankline
 lua <<EOF
