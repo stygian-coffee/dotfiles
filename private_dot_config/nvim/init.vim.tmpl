@@ -89,11 +89,7 @@ nnoremap <leader>lp :lprevious<CR>
 lua require('leap').add_default_mappings()
 
 " indent-blankline
-lua <<EOF
-require('indent_blankline').setup {
-  show_current_context = true,
-}
-EOF
+lua require('ibl').setup()
 
 " Treesitter
 lua <<EOF
