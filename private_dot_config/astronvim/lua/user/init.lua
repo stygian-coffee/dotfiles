@@ -79,9 +79,21 @@ return {
   },
 
   highlights = {
-    init = {
-      VertSplit = { link = "LineNr" },
-    },
+    init = function()
+      local get_hlgroup = require("astronvim.utils").get_hlgroup
+      local LineNr = get_hlgroup("LineNr")
+
+      return {
+        VertSplit = { link = "LineNr" },
+
+        -- Fix diagnostics next to the line numbers having the wrong background color.
+        DiagnosticError = { fg = "Red", bg = LineNr.bg },
+        DiagnosticWarn = { fg = "Orange", bg = LineNr.bg },
+        DiagnosticInfo = { fg = "LightBlue", bg = LineNr.bg },
+        DiagnosticHint = { fg = "LightGrey", bg = LineNr.bg },
+        DiagnosticOk = { fg = "LightGreen", bg = LineNr.bg },
+      }
+    end,
   },
 
   mappings = {
