@@ -104,13 +104,33 @@ return {
 
   mappings = {
     n = {
-      ["<leader>e"] = { "<cmd>Neotree toggle position=current<cr>", desc = "Toggle Explorer" },
+      ["<leader>e"] = {
+        function()
+          vim.cmd(
+            "Neotree toggle position=current dir="
+              .. vim.fs.dirname(vim.api.nvim_buf_get_name(0))
+          )
+        end,
+        desc = "Toggle Explorer",
+      },
       ["<leader>\\"] = {
-        "<cmd>split | Neotree toggle position=current<cr>",
+        function()
+          return
+            vim.cmd(
+              "split | Neotree toggle position=current dir="
+                .. vim.fs.dirname(vim.api.nvim_buf_get_name(0))
+            )
+        end,
         desc = "Open Explorer in horizontal split",
       },
       ["<leader>|"] = {
-        "<cmd>vsplit | Neotree toggle position=current<cr>",
+        function()
+          return
+            vim.cmd(
+              "vsplit | Neotree toggle position=current dir="
+                .. vim.fs.dirname(vim.api.nvim_buf_get_name(0))
+            )
+        end,
         desc = "Open Explorer in vertical split",
       },
       ["gj"] = { "10j", desc = "Navigate down 10 lines" },
