@@ -18,6 +18,12 @@ return {
       event = "BufEnter",
     },
     {
+      "nvim-treesitter/nvim-treesitter",
+      -- For some reason, Treesitter sometimes fails to parse Jsonnet files if
+      -- lazy loaded. Some kind of race condition I guess.
+      lazy = false,
+    },
+    {
       "rebelot/heirline.nvim",
       config = function(plugin, opts)
         require("plugins.configs.heirline")(plugin, opts)
