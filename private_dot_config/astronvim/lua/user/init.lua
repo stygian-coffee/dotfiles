@@ -75,6 +75,10 @@ return {
       end,
     },
     {
+      "tpope/vim-fugitive",
+      lazy = false,
+    },
+    {
       "tpope/vim-repeat",
       event = "BufEnter",
     },
