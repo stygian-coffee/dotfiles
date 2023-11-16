@@ -152,9 +152,12 @@ return {
 
   options = {
     opt = {
+      breakindent = true,
+      breakindentopt = "shift:3",
       grepprg = "rg --vimgrep",
       laststatus = 2,
       scrolloff = 8,
+      wrap = true,
     },
   },
 }
