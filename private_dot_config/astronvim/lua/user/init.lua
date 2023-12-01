@@ -116,7 +116,7 @@ return {
         function()
           vim.cmd(
             "Neotree toggle position=current dir="
-              .. vim.fs.dirname(vim.api.nvim_buf_get_name(0))
+            .. vim.fs.dirname(vim.api.nvim_buf_get_name(0))
           )
         end,
         desc = "Toggle Explorer",
@@ -124,20 +124,20 @@ return {
       ["<leader>\\"] = {
         function()
           return
-            vim.cmd(
-              "split | Neotree toggle position=current dir="
+              vim.cmd(
+                "split | Neotree toggle position=current dir="
                 .. vim.fs.dirname(vim.api.nvim_buf_get_name(0))
-            )
+              )
         end,
         desc = "Open Explorer in horizontal split",
       },
       ["<leader>|"] = {
         function()
           return
-            vim.cmd(
-              "vsplit | Neotree toggle position=current dir="
+              vim.cmd(
+                "vsplit | Neotree toggle position=current dir="
                 .. vim.fs.dirname(vim.api.nvim_buf_get_name(0))
-            )
+              )
         end,
         desc = "Open Explorer in vertical split",
       },
