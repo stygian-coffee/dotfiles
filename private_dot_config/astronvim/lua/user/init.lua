@@ -154,6 +154,7 @@ return {
     opt = {
       breakindent = true,
       breakindentopt = "shift:3",
+      clipboard = "",
       grepprg = "rg --vimgrep",
       laststatus = 2,
       scrolloff = 8,
