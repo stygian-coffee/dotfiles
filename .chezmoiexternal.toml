@@ -22,7 +22,7 @@
     clone.args = ["--depth", "1"]
     exact = true
     refreshPeriod = "168h"
-[".local/share/fonts/UbuntuMonoNerdFont-Regular.ttf"]
+[".local/share/fonts/UbuntuMonoNerdFont-Regular.ttf"] # Used by Alacritty
     type = "file"
     url = "https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/UbuntuMono/Regular/UbuntuMonoNerdFont-Regular.ttf"
     refreshPeriod = "168h"
