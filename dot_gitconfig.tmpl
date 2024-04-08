@@ -1,12 +1,18 @@
 [user]
-	name = {{ .name }}
-	email = {{ .email }}
+  name = {{ .name }}
+  email = {{ .email }}
+
+[diff]
+  external = difft
+
+[pager]
+  difftool = true
 
 [merge]
-	tool = vimdiff
+  tool = vimdiff
 
 [mergetool]
-	keepBackup = false
+  keepBackup = false
 
 [mergetool "vimdiff"]
-	cmd = nvim -d $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
+  cmd = nvim -d $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
