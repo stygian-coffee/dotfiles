@@ -1,7 +1,8 @@
 [".config/nvim"]
     type = "git-repo"
     url = "https://github.com/AstroNvim/AstroNvim"
-    clone.args = ["--depth", "1"]
+    # TODO upgrade to v4
+    clone.args = ["--depth", "1", "--branch", "v3.45.3"]
     exact = true
     refreshPeriod = "168h"
 [".oh-my-zsh"]
