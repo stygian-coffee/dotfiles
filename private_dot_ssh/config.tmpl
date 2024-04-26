@@ -3,7 +3,9 @@ HashKnownHosts no # hostname tab-completion
 
 Host *
     ControlMaster auto
-    ControlPersist no
+    # Wait a minute before closing. Helpful for automated processes that make
+    # multiple SSH connections in quick succession.
+    ControlPersist 60
     ControlPath ~/.ssh/sockets/%C
 
 {{ if eq .profile "work" -}}
