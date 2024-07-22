@@ -13,5 +13,6 @@ alias ansible-shell='ansible all -m shell -b --ask-become-pass -e ansible_remote
 {{ end -}}
 
 {{ if and (eq .profile "work") .office_workstation_ip -}}
-alias ssh-office-workstation='ssh office_workstation -v -N -D 1080'
+# ControlPersist=no ensures that this connection will not fork to the background
+alias ssh-office-workstation='ssh office_workstation -oControlPersist=no -v -N -D 1080'
 {{ end -}}
