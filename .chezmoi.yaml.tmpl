@@ -23,3 +23,6 @@ data:
   office_workstation_ip: ""
 {{- end }}
   xdg_session_type: {{ default "x11" (env "XDG_SESSION_TYPE") }}
+
+# https://www.chezmoi.io/user-guide/frequently-asked-questions/troubleshooting/#chezmoi-makes-sshconfig-group-writeable-how-do-i-stop-this
+umask: 0o022
