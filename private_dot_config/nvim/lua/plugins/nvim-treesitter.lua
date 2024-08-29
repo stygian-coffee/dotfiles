@@ -6,7 +6,8 @@ return {
   opts = {
     highlight = {
       enable = true,
-      -- gitcommit otherwise spits out a bunch of errors for some reason
+      -- gitcommit otherwise spits out a bunch of errors for some reason. Maybe this is an
+      -- incompatibility with vim-figutive?
       disable = { "gitcommit" },
     },
   },
