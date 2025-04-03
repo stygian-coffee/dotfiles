@@ -1,8 +1,7 @@
 local get_hlgroup = require("astroui").get_hlgroup
-local ErrorMsg = get_hlgroup("ErrorMsg")
-local ModeMsg = get_hlgroup("ModeMsg")
-local Normal = get_hlgroup("Normal")
-local TabLine = get_hlgroup("TabLine")
+local ErrorMsg = get_hlgroup "ErrorMsg"
+local ModeMsg = get_hlgroup "ModeMsg"
+local Normal = get_hlgroup "Normal"
 
 return {
   "AstroNvim/astroui",
@@ -10,7 +9,7 @@ return {
     colorscheme = "base16-seti",
     highlights = {
       init = function()
-        local LineNr = get_hlgroup("LineNr")
+        local LineNr = get_hlgroup "LineNr"
 
         return {
           VertSplit = { link = "LineNr" },
@@ -28,14 +27,14 @@ return {
       colors = {
         close_fg = ErrorMsg.fg,
         fg = Normal.fg,
-        bg = TabLine.bg,
+        bg = Normal.bg,
         section_fg = Normal.fg,
-        section_bg = TabLine.bg,
+        section_bg = Normal.bg,
         buffer_active_close_fg = ErrorMsg.fg,
         buffer_visible_close_fg = ErrorMsg.fg,
         buffer_picker_fg = ModeMsg.fg,
         tab_close_fg = ErrorMsg.fg,
-      }
-    }
-  }
+      },
+    },
+  },
 }
