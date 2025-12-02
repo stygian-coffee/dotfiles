@@ -1,27 +1,9 @@
-{{ $profile := promptStringOnce . "profile" "Profile (home/work)" -}}
-{{ if not (or (eq $profile "home") (eq $profile "work")) -}}
-  {{ writeToStdout (print "Invalid profile " $profile "\n") -}}
-  {{ exit 1 -}}
-{{ end -}}
-
-encryption: gpg
-gpg:
-  recipients:
-    - alkrigsman@gmail.com
-    - a.krigsman@basenet.nl
+{{- writeToStdout "Edit your config in ~/.config/chezmoi/chezmoi.yaml\n" -}}
 
 data:
-  profile: {{ $profile | quote }}
-{{- if eq $profile "home" }}
-  email: "akrigsman@gmail.com"
-{{ else }}{{/* "work" */}}
-  email: "a.krigsman@basenet.nl"
-{{- end }}
+  profile: # TODO: "home" or "work"
+  email: # TODO:
   name: Alexander Krigsman
-{{- if eq $profile "work" }}
-  # Working from home? Provide your office workstation IP here.
-  office_workstation_ip: ""
-{{- end }}
   xdg_session_type: {{ default "x11" (env "XDG_SESSION_TYPE") }}
 
 # https://www.chezmoi.io/user-guide/frequently-asked-questions/troubleshooting/#chezmoi-makes-sshconfig-group-writeable-how-do-i-stop-this

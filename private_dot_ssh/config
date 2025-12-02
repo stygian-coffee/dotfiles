@@ -7,7 +7,3 @@ Host *
     # multiple SSH connections in quick succession.
     ControlPersist 5
     ControlPath ~/.ssh/sockets/%C
-
-{{ if eq .profile "work" -}}
-Include ~/.ssh/config_basenet
-{{ end }}
