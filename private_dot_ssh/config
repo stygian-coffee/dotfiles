@@ -7,3 +7,5 @@ Host *
     # multiple SSH connections in quick succession.
     ControlPersist 5
     ControlPath ~/.ssh/sockets/%C
+
+Include config.d/*

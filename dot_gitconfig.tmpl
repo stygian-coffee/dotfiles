@@ -5,8 +5,10 @@
 [diff]
   external = difft
 
-[pager]
-  difftool = true
+{{ if eq .profile "work" -}}
+[commit]
+  gpgsign = true
+{{- end }}
 
 [merge]
   tool = vimdiff
@@ -16,3 +18,6 @@
 
 [mergetool "vimdiff"]
   cmd = nvim -d $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
+
+[pager]
+  difftool = true
