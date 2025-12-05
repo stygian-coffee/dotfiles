@@ -3,6 +3,9 @@
 encryption: gpg
 gpg:
   recipients:
+    # Must include both recipients since Chezmoi tries to decrypt files
+    # regardless of whether they are in .chezmoiignore
+    - alkrigsman@gmail.com
     - alexander.krigsman@maverickderivatives.com
 
 data:
