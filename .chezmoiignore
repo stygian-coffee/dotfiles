@@ -1,3 +1,3 @@
 {{ if ne .profile "work" -}}
-.ssh/config_basenet
+.ssh/config.d/config_mavder
 {{- end }}
