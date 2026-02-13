@@ -2,9 +2,6 @@
   name = {{ .name }}
   email = {{ .email }}
 
-[diff]
-  external = difft
-
 {{ if eq .profile "work" -}}
 [commit]
   gpgsign = true
