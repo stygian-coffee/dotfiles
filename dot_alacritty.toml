@@ -55,3 +55,9 @@ style = { blinking = "On" }
 
 [mouse]
 hide_when_typing = true
+
+# Claude Code Shift+Enter
+[[keyboard.bindings]]
+key = "Return"
+mods = "Shift"
+chars = "\u001B\r"
