@@ -12,9 +12,11 @@ set-window-option -g mode-keys vi
 # mouse support
 set-option -g mouse on
 
-# extended keys for Pi
-set -g extended-keys on
-set -g extended-keys-format csi-u
+# Claude Code
+# https://code.claude.com/docs/en/terminal-config#configure-tmux
+set -g allow-passthrough on
+set -s extended-keys on
+set -as terminal-features 'xterm*:extkeys'
 
 {{ if eq .xdg_session_type "wayland" -}}
 # Wayland clipboard
